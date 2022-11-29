@@ -1,0 +1,442 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="icon" href="fitlife logo.jpeg" >
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+        
+        <style>
+
+
+/* #backgroundImage{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: -10;
+} */
+
+          body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  background-color: rgb(0, 0, 17);
+  /* margin: 0; */
+}
+
+html {
+  box-sizing: border-box;
+}
+
+
+
+.nav{
+    background-color:rgb(99, 93, 102);
+    position: sticky;
+    top: 0px;
+    z-index: 30;
+}
+.nav-item{
+    margin: 0px 2.2%;
+
+}
+.nav-link{
+    color: rgb(248, 243, 247);
+    transition: all 0.3s;
+}
+.nav-link:hover{
+    color: rgb(44, 43, 43);
+    font-size: 18px;
+}
+
+#nav-div{
+	
+	
+	height: 80px;
+	
+	/*border: 2px solid green;*/
+	/*width: 100%;*/
+	
+	
+}
+#nav-div img{
+	width: 25%;
+	height: 80px;
+	display: inline-block;
+}
+
+#search{
+	border-radius: 50px;
+	
+	outline: none;
+	height: 50px;
+	width: 30%;
+	
+
+	padding: 6px 10px;
+    font-size: 20px;
+}
+.fa-bell{
+	/* margin: 0px 1%; */
+    font-size: 30px;
+}
+
+#Go {
+	/* margin: 0px 1%; */
+	background-color:#6600cc;
+	color: rgb(196, 226, 235) ;
+    width: 7%;
+    height: 40px;
+    font-size: 15px;
+}
+#Go:hover{
+    background-color:rgb(196, 226, 235) ;
+    color:  #21043f;;
+}
+
+.fa-user{
+    font-size: 30px;
+    color: grey;
+}
+.user{
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    position: relative;
+    /* left: 1.5%; */
+    left: 23%;
+}
+.user:focus{
+    outline: none;
+    top: -5px;
+}
+
+.user_click{
+    position: relative;
+    top: 10px;
+    left: -10px;
+    color: white;
+    border:2px solid rgb(241, 62, 62);
+    width: 0px;
+    z-index: 35;
+}
+
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  /* height: 200px; */
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: rgb(99, 97, 97);
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: rgb(117, 115, 115);
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* h2{
+  color: white;
+}
+.temp{
+  color: white;
+} */
+
+.news-letter{-webkit-text-size-adjust: 100%;
+    line-height: 21px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #faf8f8;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Source Sans Pro,sans-serif;
+    margin-bottom: 25px;
+    position: relative;}
+
+     .icons-box{ -webkit-text-size-adjust: 100%;
+    line-height: 21px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #212121;
+    outline: none;
+    box-sizing: border-box;
+        font-family: Source Sans Pro,sans-serif;}
+        </style>
+    </head>
+<body>
+
+  <!-- <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v462-n-130-textureidea_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9465282a2b0a375f4f5b120d7bbad882" id="backgroundImage" > -->
+
+
+  <div id="nav-div">
+    <a href="index.html" ><img src="fitlife logo.jpeg"></a>
+  
+    <input type="text" name="search" placeholder="Search.." id="search">
+    <input id="Go" type="button" name="Go" value="Go">
+    <!-- <button id="login" >Login/Signup</button> -->
+    <button class="user" id="default_user" ><i class="fa fa-user" id="default_user_icon" aria-hidden="true"></i></button>
+  
+  </div>
+  
+
+  <ul class="nav" >
+    <li class="nav-item" >
+        <a href="fitlifeaboutus.html" class="nav-link" >About Us</a>
+    </li>
+    <li class="nav-item" >
+        <a href="index.html" class="nav-link" >Home</a>
+    </li>
+    <li class="nav-item" >
+      <a href="fitlifeshopping.html" class="nav-link" >Shopping</a>
+  </li>
+  <li class="nav-item" >
+      <a href="fitlifefood.html" class="nav-link" >Healthy Food order</a>
+  </li>
+  <li class="nav-item" >
+      <a href="fitlifetips.html" class="nav-link" >Health Tips</a>
+  </li>
+    <li class="nav-item" >
+        <a href="fitlifecontactus.html" class="nav-link" >Contact Us</a>
+    </li>
+    <li class="nav-item" >
+      <a href="fitlifecart.html" class="nav-link" ><i class="fa fa-cart-plus" aria-hidden="true"></i>Cart</a>
+  </li>
+</ul>
+
+
+  <div class="about-section">
+    <h1>About Fitlife</h1>
+    <p>We're fitlife- the right destination for people who are serious about health and fitness. </p>
+    <p>Buy 100% Genuine Bodybuilding, Vitamins & Health Supplements Online at Best Prices.
+      <p>We sell consumables that you need rather than want. In such cases, the authenticity of the product matters. Half the supplement market is flooded with fakes pumped with steroids. And that's why when you shop whey from us, be sure it is 100% genuine, without any junk.</p>
+  
+  <p>Whenever you see this logo next to our product, it's just our way of telling you that we've sourced the product directly and test it before sending it out to you. It is to tell you that what you are having is safe. </p>
+  <p>You no longer have to hunt for your supplements or a ton of nutrition stores to find the supplement you need. We have over 200 brands & authorized vendors listed on our website. All just to make sure what you get is right.</p>
+  
+  </div>
+  
+  <h2 style="text-align:center;color:white">Our Team</h2>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg" style="width:100%">
+        <div class="container">
+          <h2>Tanish</h2>
+          <p class="title">Manager</p>
+          <p class="temp" >Our team member</p>
+          <p class="temp">tanish1742.be20@chitkara.edu.in</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg"  style="width:100%">
+        <div class="container">
+          <h2 >Tanya</h2>
+          <p class="title">Art Director</p>
+          <p class="temp">Our team Member</p>
+          <p class="temp">tanya1747.be20@chitkara.edu.in</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg"  style="width:100%">
+        <div class="container">
+          <h2>Tushar</h2>
+          <p class="title">Assistant Manager</p>
+          <p class="temp">Our team Member</p>
+          <p class="temp"> tushar1751.be20@chitkara.edu.in</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg" style="width:100%">
+        <div class="container">
+          <h2>Swayam</h2>
+          <p class="title">Designer</p>
+          <p class="temp">our team member</p>
+          <p class="temp">swayam1741.be20@chitkara.edu.in</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="news-letter">
+    <h4>Subscribe to our newsletter</h4>
+    <p>Be the first one to receive amazing offers, deals and news</p>
+    <div class="new-letter news-letter-footer">
+        <form class="subscribe-nl-form" action="javascript:subs()" >
+            <input type="email" name="nl-footer-email" class="subscribe-nl-email error email" required placeholder="Enter your email" autocomplete="off">
+            <input type="submit" class="subscribe subscribe-nl-btn" value="subscribe">
+            <p class="err-txt active">You must enter a valid email address.</p>
+        </form>
+    </div>
+</div>
+<div>
+<h4 style="color: white;" >Connect with Us</h4>
+<div class="icons-box">
+<a href="https://www.facebook.com/Firlife" target="_blank">
+<img src="https://img2.hkrtcdn.com/react/static/media/common/footer/facebook.svg" alt="facebook icon">
+</a>
+<a href="https://www.instagram.com/fitlife/?hl=en" target="_blank">
+<img src="https://img2.hkrtcdn.com/react/static/media/common/footer/instagram.svg" alt="instagram icon">
+</a>
+<a href="https://twitter.com/fitlife" target="_blank">
+<img src="https://img2.hkrtcdn.com/react/static/media/common/footer/twitter.svg" alt="twitter icon">
+</a>
+<a href="https://www.youtube.com/user/fitlife" target="_blank">
+<img src="https://img2.hkrtcdn.com/react/static/media/common/footer/youtube.svg" alt="youtube icon">
+</a>
+<a href="https://in.pinterest.com/fitlife/" target="_blank">
+<img src="https://img2.hkrtcdn.com/react/static/media/common/footer/pinterest.svg" alt="pinterest icon">
+</a>
+</div>
+
+
+
+
+
+
+<script>
+  
+
+$(".button").click(function(){
+  alert("Please refer to email address for contact!");
+})
+
+function subs(){
+  if($(".email").val()!=null)
+  alert("Congratulations! you have been subscribed to our newsletter.")
+};
+
+
+
+
+// database usage for current user......................................
+
+// var db = openDatabase("fitlife",1.0,"fitlife",65535);
+var db = openDatabase("fitlife",1.0,"fitlife",65535);
+
+
+$(document).ready(function (){
+
+
+// db.transaction(function(transaction){
+//     var query = "create table if not exists data2"+"(currentuser)";
+//     transaction.executeSql(query,undefined,function(){console.log("success");},function(){console.log("failure");});
+// })
+
+
+
+db.transaction(function(transaction){
+    var query = "select * from data2";
+    transaction.executeSql(query,[],function(transaction,result){
+        // if(result.rows.length){
+            // for(var i=0;i<result.rows.length;i++){
+                var row=result.rows.item(result.rows.length-1);
+                // var row=result.rows.item(0);
+
+                // console.log(row.name);
+                var name12=row.currentuser;  //email todo.................
+                // var password1=row.password;
+                
+                    var a = document.getElementById("default_user_icon");
+                    if(a!=null){
+                    a.remove();
+                    }
+                    document.getElementById("default_user").innerText=name12[0];
+                    document.getElementById("default_user").style.backgroundColor="blue";
+                    document.getElementById("default_user").style.color="white";
+                    name_track="You Signed in as "+name12;
+                    // console.log(name12);
+                    
+                   
+                // } 
+            // }     
+                  
+    });
+})
+});
+
+
+var t=1;
+$(".user").click(function(){
+    if(t==1){
+        t++;
+    $(".user").append("<p class='user_click' >"+name_track+"</p>");
+    }
+});
+
+$(".user").focusout(function(){
+    t=1;
+    $(".user_click").remove();
+}) 
+
+
+
+// ...............................................................
+
+
+</script>
+</body>
+</html>

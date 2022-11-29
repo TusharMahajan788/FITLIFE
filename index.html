@@ -1,0 +1,507 @@
+<html>
+    <head>
+        <title>Fitlife</title>
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
+        <meta name ="viewport" content="width=device-width , initial-scale=1 ">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="icon" href="fitlife logo.jpeg" >
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+        <link rel="stylesheet" type="text/css" href="fitlife.css">
+        <!-- <script src="./node_modules/requirejs/require.js" ></script> -->
+    </head>
+    <body>
+
+
+        <div id="nav-div">
+            <a href="index.html" ><img src="fitlife logo.jpeg"></a>
+            
+    
+           
+    
+            <input type="text" name="search" placeholder="Search.." id="search">
+            <input id="Go" type="button" name="Go" value="Go">
+            <button id="login" >Login/Signup</button>
+            <button class="user" id="default_user" ><i class="fa fa-user" id="default_user_icon" aria-hidden="true"></i></button>
+
+        </div>
+
+
+
+        <ul class="nav "  >
+            <li class="nav-item" >
+                <a href="fitlifeaboutus.html" class="nav-link" >About Us</a>
+            </li>
+            <li class="nav-item" >
+                <a href="index.html" class="nav-link" >Home</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifeshopping.html" class="nav-link" >Shopping</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifefood.html" class="nav-link" >Healthy Food order</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifetips.html" class="nav-link" >Health Tips</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifecontactus.html" class="nav-link" >Contact Us</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifecart.html" class="nav-link" ><i class="fa fa-cart-plus" aria-hidden="true"></i>Cart</a>
+            </li>
+        </ul>
+    
+
+        <div id="outerdiv" class="products">
+            <div id="combinedDiv" >
+            <img src="fitlife1.jpg" >
+            <img src="fitlife2.jpg" >
+            <img src="fitlife3.jpg" >
+            <img src="fitlife1.jpg" >
+            </div>  
+        </div>
+
+
+
+        <div class="alert_background">
+            
+        </div>
+
+        <div class="alert_div1" >
+           <button id="cut_alert1" > <i class="fa fa-times" aria-hidden="true"></i></button>
+            
+           <form id="signup_form" >
+            <h3>Signup</h3>
+            <table>
+               <tr><td><label>Name</label></td>
+                <td> <input type="text" id="name"></td></tr> 
+                <tr> <td><label>Email</label></td>
+                    <td><input type="email" id="email"></td></tr> 
+                <tr><td><label>Phone No</label></td>
+                    <td><input type="text" maxlength="10" id="phone"></td></tr>
+                <tr><td><label>Set Password</label></td>
+                    <td> <input type="password" id="password"></td></tr> 
+                <tr><td colspan="2" ><button id="signup" type="button">Sign Up</button></td></tr>
+            </table>
+            </form>
+            <hr>
+            <form id="login_form" >
+                <h3>Login</h3>
+            <table>
+                <tr><td><label>Name</label></td>
+                    <td><input type="text" id="login_name"></td></tr> 
+                <tr><td><label>Password</label></td>
+                    <td><input type="password" id="login_password"></td></tr> 
+                <tr><td colspan="2" ><button id="inner_login" type="button">Login</button></td></tr>
+            </table>
+            </form>
+        </div>
+
+
+        <div class="alert_div" >
+            <button id="cut_alert" > <i class="fa fa-times" aria-hidden="true"></i></button>
+             <!-- id of both sign up form and buy now for is same , so that there is no need of applying CSS to both seperately -->
+            <form id="signup_form" action="javascript:sendmail()">
+             <h3>Delivery & Payment</h3>
+             <table>
+                <tr><td><label>Delivery Address</label></td>
+                 <td> <textarea id="address" required ></textarea></td></tr>
+                 <tr><td><label>Email </label></td>
+                     <td> <input type="email" id="mail" required ></td></tr>
+                 <tr > <td><label>Select Payment method</label></td>
+                     <td ><input type="radio" name="r1" onclick=func() id="r1">Debit/Credit Card
+                     <br><input type="radio" name="r1" onclick=func() id="r2">Net banking
+                     <br><input type="radio" name="r1" id="r3" onclick=func()>Pay on Delivery
+                     </td></tr> 
+                     
+                     <tr><td><label>Amount</label></td>
+                         <td> <input type="number" id="amount" disabled></td></tr>       
+                         
+                         
+                       <table id="card">
+                         <tr ><td><label>Card Number</label></td>
+                     <td> <input type="text" ></td></tr> 
+                    <tr ><td><label>CVV</label></td>
+                         <td> <input type="password" ></td></tr> 
+                        </table>
+
+                        <table id="customer_id">
+                            <tr ><td><label>Bank customer id</label></td>
+                                <td> <input type="text" ></td></tr> 
+                            </table>
+                        <table>
+                 <tr><td colspan="2" ><input class="make_payment" type="submit" value = "Make Payment & Place Order"></td></tr> 
+                 <tr><td colspan="2">Please check your Mail box after making payment for justification!</td>
+                 </table>
+                </table>
+             </form>
+           
+             
+         </div>
+
+
+
+         <div class="out" >
+            <div>
+            <img class="product_image" src="fitlifeproduct1.PNG">
+        </div>
+        <div style="margin:50px ;" >
+            <p class="innerProductDesc" > 
+                Fitlife Gold Standard 100% Whey Protien
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span style="color: white;" class="innerprize"><b>₹999/-</b></span> <br>
+                <div class="innerdiscount" style="margin-left: -2px;" ><span class="inner_discount"  >28% off</span> </div><br><br>
+                <button class="add_to_cart" style="margin-left: -2px;" ><i class="fa fa-cart-plus" aria-hidden="true"></i> &nbsp;ADD</button>
+                <button class="buy_now" >Buy now</button>
+        
+                   <ul class="innerinnerProductDesc">
+                  </ul>
+    
+    </p>        
+    </div>
+          </div>
+    
+
+
+
+
+        <!-- <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v462-n-130-textureidea_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9465282a2b0a375f4f5b120d7bbad882" id="backgroundImage" > -->
+
+        
+        
+
+
+<!-- PRODUCTS IS CLASS GIVEN TO ALL THE MAIN PORTION OF WEBSITE TO LATER GIVE THEM ALL DISPLAY AS NONE -->
+<!-- HAR EK PRODUCT KA DATA-COUNT PICHLE WALA SE +1 HONA CHAIYE AND HAR EK KE LIYE LI'S KI VALUE UPDATE HONE CHAHIYE -->
+
+
+<!-- Trending Now Section -->
+        <div style="margin-left: 35%;" class="products" ><h1>Trending Now</h1></div>
+        <div class="products" >
+            
+            <div class="productDiv" >
+                <button data-count=1 class="image"><img class="productImage" src="fitlifeproduct1.PNG"></button>
+                <p class="productDesc" > 
+                    Fitlife Gold Standard 100% Whey Protien
+                    </p>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹999/-</b></span>
+                    <br> <div class="discount"  >28% off</div>
+                   
+            </div>
+        
+
+            <div class="productDiv" >
+                <button data-count=2 class="image"><img class="productImage" src="fitlifeproduct1.PNG"></button>
+                <p class="productDesc" > 
+                    Fitlife Gold Standard 100% Whey Protien
+                    </p>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹999/-</b></span>
+                    <br> <div class="discount"  >28% off</div>
+                   
+            </div>
+
+        <div class="productDiv" >
+            <button data-count=3 class="image"><img class="productImage" src="fitlifeproduct1.PNG"></button>
+            <p class="productDesc" > 
+                Fitlife Gold Standard 100% Whey Protien
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹999/-</b></span>
+                <br> <div class="discount"  >28% off</div>
+               
+        </div>
+
+        <div class="productDiv" >
+            <button data-count=4 class="image"><img class="productImage" src="fitlifeproduct1.PNG"></button>
+            <p class="productDesc" > 
+                Fitlife Gold Standard 100% Whey Protien
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹999/-</b></span>
+                <br> <div class="discount"  >28% off</div>
+               
+        </div>
+
+        <div class="productDiv" >
+            <button data-count=5 class="image"><img class="productImage" src="fitlifeproduct1.PNG"></button>
+            <p class="productDesc" > 
+                Fitlife Gold Standard 100% Whey Protien
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹999/-</b></span>
+                <br> <div class="discount"  >28% off</div>
+               
+        </div>
+    </div>
+
+<!-- Gym Accessories Section -->
+
+    <div style="margin-left: 35%;" class="products"><h1>Gym Accessories</h1></div>
+    <div class="products" >
+
+        <div class="productDiv" >
+            <button data-count=6 class="image"><img class="productImage" src="fitlife5.PNG"></button>
+            <p class="productDesc" > 
+                Fitlife FITNESS PVC Dumbbells Set, Blue, 5 kg
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹799/-</b></span>
+                <br> <div class="discount"  >19% off</div>
+               
+        </div>
+
+        <div class="productDiv" >
+            <button data-count=7 class="image"><img class="productImage" src="fitlife5.PNG"></button>
+            <p class="productDesc" > 
+                Fitlife FITNESS PVC Dumbbells Set, Blue, 5 kg
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹799/-</b></span>
+                <br> <div class="discount"  >19% off</div>
+               
+        </div>
+
+        <div class="productDiv" >
+            <button data-count=8 class="image"><img class="productImage" src="fitlife5.PNG"></button>
+            <p class="productDesc" > 
+                Fitlife FITNESS PVC Dumbbells Set, Blue, 5 kg
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹799/-</b></span>
+                <br> <div class="discount"  >19% off</div>
+               
+        </div>
+
+        <div class="productDiv" >
+            <button data-count=9 class="image"><img class="productImage" src="fitlife5.PNG"></button>
+            <p class="productDesc" > 
+                Fitlife FITNESS PVC Dumbbells Set, Blue, 5 kg
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹799/-</b></span>
+                <br> <div class="discount"  >19% off</div>
+               
+        </div>
+
+    </div>
+
+
+<!-- Popular in Health Food & Drinks Section -->
+
+        <div style="margin-left: 35%;" class="products" ><h1>Popular in Health Food & Drinks</h1></div>
+    <div class="products" >
+
+
+        <div class="productDiv" >
+            <button data-count=10 class="image" ><img class="productImage" src="fitlife4.PNG"></button>
+            <p class="productDesc" > 
+                Fitlife Peanut Butter(Unsweetened)-1Kg
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹499/-</b></span>
+                <br> <div class="discount"  >19% off</div>
+               
+        </div>
+
+
+        <div class="productDiv" >
+            <button data-count=11 class="image" ><img class="productImage" src="fitlife4.PNG"></button>
+            <p class="productDesc" > 
+                Fitlife Peanut Butter(Unsweetened)-1Kg
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹499/-</b></span>
+                <br> <div class="discount"  >19% off</div>
+               
+        </div>
+
+       <div class="productDiv" >
+            <button data-count=12 class="image" ><img class="productImage" src="fitlife4.PNG"></button>
+            <p class="productDesc" > 
+                Fitlife Peanut Butter(Unsweetened)-1Kg
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹499/-</b></span>
+                <br> <div class="discount"  >19% off</div>
+               
+        </div>
+
+        <div class="productDiv" >
+            <button data-count=13 class="image" ><img class="productImage" src="fitlife4.PNG"></button>
+            <p class="productDesc" > 
+                Fitlife Peanut Butter(Unsweetened)-1Kg
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹499/-</b></span>
+                <br> <div class="discount"  >19% off</div>
+               
+        </div>
+
+
+
+    </div>
+
+
+<!-- Ayurveda and herbs -->
+
+    
+<div style="margin-left: 35%;" class="products" ><h1>Ayurveda and Herbs</h1></div>
+<div class="products" >
+    <div class="productDiv" >
+            <button data-count=14 class="image" ><img class="productImage" src="fitlife6.PNG"></button>
+            <p class="productDesc" > 
+                Himalaya Healthcare Solutions (combo)
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹299/-</b></span>
+                <br> <div class="discount"  >15% off</div>
+               
+        </div>
+
+
+        <div class="productDiv" >
+            <button data-count=15 class="image" ><img class="productImage" src="fitlife6.PNG"></button>
+            <p class="productDesc" > 
+                Himalaya Healthcare Solutions (combo)
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹299/-</b></span>
+                <br> <div class="discount"  >15% off</div>
+               
+        </div>
+
+    <div class="productDiv" >
+            <button data-count=16 class="image" ><img class="productImage" src="fitlife6.PNG"></button>
+            <p class="productDesc" > 
+                Himalaya Healthcare Solutions (combo)
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹299/-</b></span>
+                <br> <div class="discount"  >15% off</div>
+               
+        </div>
+
+    <div class="productDiv" >
+            <button data-count=17 class="image" ><img class="productImage" src="fitlife6.PNG"></button>
+            <p class="productDesc" > 
+                Himalaya Healthcare Solutions (combo)
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹299/-</b></span>
+                <br> <div class="discount"  >15% off</div>
+               
+        </div>
+
+    <div class="productDiv" >
+            <button data-count=18 class="image" ><img class="productImage" src="fitlife6.PNG"></button>
+            <p class="productDesc" > 
+                Himalaya Healthcare Solutions (combo)
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹299/-</b></span>
+                <br> <div class="discount"  >15% off</div>
+               
+        </div>
+
+</div>
+
+
+<div class="footer " >
+    <img src="fitlife logo.jpeg" >
+    <p><h3>Mailing Address</h3>ftlfspprt@gmail.com</p>
+    <p><h3> Address</h3>123 Anywhere St., Any City, State, Country 12345</p>
+    <p>Copyright ©2021 Fitlife <i class="far fa-registered"></i>
+        | All rights reserved | Disclaimer | Privacy Policy | Refund and Cancellation</p>
+</div>
+
+
+
+
+
+
+
+
+        <script src="fitlife.js" ></script>
+    </body>
+</html>

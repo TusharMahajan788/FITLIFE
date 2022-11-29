@@ -1,0 +1,750 @@
+<html>
+    <head>
+        <title>Fitlife</title>
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
+        <meta name ="viewport" content="width=device-width , initial-scale=1 ">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="icon" href="fitlife logo.jpeg" >
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+        
+        <link rel="stylesheet" type="text/css" href="fitlife.css">
+        <style>
+            .user{
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    position: relative;
+    /* left: 1.5%; */
+    left: 23%;
+}
+
+input[type=radio]{
+                margin-left: -70px;
+            }
+
+.buy_now{
+               height: 30px;
+               width: 100px;
+               background-color:chartreuse;
+           }
+
+.innerProductDesc{
+               color: white;
+           }
+           .innerinnerProductDesc li{
+               color: white;
+           }
+           .out{
+                /* display: flex;
+                flex-direction: row;
+                justify-content: space-between; */
+                display: none;
+            }
+            
+            
+            
+            .product_image{
+                height: 400px;
+                width: 100%;
+            }
+            
+        </style>
+       
+        <!-- <script src="./node_modules/requirejs/require.js" ></script> -->
+    </head>
+    <body>
+
+        <div class="alert_background">
+            
+        </div>
+
+        <div class="alert_div" >
+            <button id="cut_alert" > <i class="fa fa-times" aria-hidden="true"></i></button>
+             <!-- id of both sign up form and buy now for is same , so that there is no need of applying CSS to both seperately -->
+            <form id="signup_form" action="javascript:sendmail()">
+             <h3>Delivery & Payment</h3>
+             <table>
+                <tr><td><label>Delivery Address</label></td>
+                 <td> <textarea id="address" required ></textarea></td></tr>
+                 <tr><td><label>Email </label></td>
+                     <td> <input type="email" id="mail" required ></td></tr>
+                 <tr > <td><label>Select Payment method</label></td>
+                     <td ><input type="radio" name="r1" onclick=func() id="r1">Debit/Credit Card
+                     <br><input type="radio" name="r1" onclick=func() id="r2">Net banking
+                     <br><input type="radio" name="r1" id="r3" onclick=func()>Pay on Delivery
+                     </td></tr> 
+                     
+                     <tr><td><label>Amount</label></td>
+                         <td> <input type="number" id="amount" disabled></td></tr>       
+                         
+                         
+                       <table id="card">
+                         <tr ><td><label>Card Number</label></td>
+                     <td> <input type="text" ></td></tr> 
+                    <tr ><td><label>CVV</label></td>
+                         <td> <input type="password" ></td></tr> 
+                        </table>
+
+                        <table id="customer_id">
+                            <tr ><td><label>Bank customer id</label></td>
+                                <td> <input type="text" ></td></tr> 
+                            </table>
+                        <table>
+                 <tr><td colspan="2" ><input class="make_payment" type="submit" value = "Make Payment & Place Order"></td></tr> 
+                 <tr><td colspan="2">Please check your Mail box after making payment for justification!</td>
+                 </table>
+                </table>
+             </form>
+           
+             
+         </div>
+
+
+        <!-- <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v462-n-130-textureidea_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9465282a2b0a375f4f5b120d7bbad882" id="backgroundImage" > -->
+
+        <div id="nav-div">
+            <a href="index.html" ><img src="fitlife logo.jpeg"></a>
+            
+    
+           
+    
+            <input type="text" name="search" placeholder="Search.." id="search">
+            <input id="Go" type="button" name="Go" value="Go">
+            <button class="user" id="default_user" ><i class="fa fa-user" id="default_user_icon" aria-hidden="true"></i></button>
+
+        </div>
+
+
+
+        <ul class="nav" >
+            <li class="nav-item" >
+                <a href="fitlifeaboutus.html" class="nav-link" >About Us</a>
+            </li>
+            <li class="nav-item" >
+                <a href="index.html" class="nav-link" >Home</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifeshopping.html" class="nav-link" >Shopping</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifefood.html" class="nav-link" >Healthy Food order</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifetips.html" class="nav-link" >Health Tips</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifecontactus.html" class="nav-link" >Contact Us</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifecart.html" class="nav-link" ><i class="fa fa-cart-plus" aria-hidden="true"></i>Cart</a>
+            </li>
+        </ul>
+    
+
+  
+
+        <div class="out" >
+            <div>
+            <img class="product_image" src="fitlifeproduct1.PNG">
+        </div>
+        <div style="margin:50px ;" >
+            <p class="innerProductDesc" > 
+                Fitlife Gold Standard 100% Whey Protien
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span style="color: white;" class="innerprize"><b>₹999/-</b></span> <br>
+                <div class="innerdiscount" style="margin-left: -2px;" ><span class="inner_discount"  >28% off</span> </div><br><br>
+                <button class="add_to_cart" style="margin-left: -2px;" ><i class="fa fa-cart-plus" aria-hidden="true"></i> &nbsp;ADD</button>
+                <button class="buy_now" >Buy now</button>
+        
+                   <ul class="innerinnerProductDesc">
+                  </ul>
+    
+    </p>        
+    </div>
+          </div>
+    
+
+
+
+        
+
+        <div  class="products" style="margin-left: 40%;"><h1>Shopping</h1></div>
+        <div class="products" >
+
+
+
+            
+            
+        <div class="productDiv" >
+            <button data-count=1 class="image"><img class="productImage" src="fitlife5.PNG"></button>
+            <p class="productDesc" > 
+                Fitlife FITNESS PVC Dumbbells Set, Blue, 5 kg
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹799/-</b></span>
+                <br> <div class="discount"  >19% off</div>
+               
+        </div>
+        
+        <div class="productDiv" >
+            <button data-count=2 class="image" ><img class="productImage" src="fitlife7.PNG"></button>
+            <p class="productDesc" > 
+                B Fit USA Heavy Nylon Gym Handle Pair (NH5), Black
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹719/-</b></span>
+                <br> <div class="discount"  >10% off</div>
+               
+        </div>
+
+
+        <div class="productDiv" >
+            <button data-count=3 class="image" ><img class="productImage" src="fitlife8.PNG"></button>
+            <p class="productDesc" > 
+                B Fit USA TPE Yoga Mat, Purple
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹1250/-</b></span>
+                <br> <div class="discount"  >21% off</div>
+               
+        </div>
+
+
+
+        <div class="productDiv" >
+            <button data-count=4 class="image" ><img class="productImage" src="fitlife8.PNG"></button>
+            <p class="productDesc" > 
+                B Fit USA TPE Yoga Mat, Purple
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹1250/-</b></span>
+                <br> <div class="discount"  >21% off</div>
+               
+        </div>
+
+
+
+        <div class="productDiv" >
+            <button data-count=5 class="image" ><img class="productImage" src="fitlife5.PNG"></button>
+            <p class="productDesc" > 
+                Fitlife FITNESS PVC Dumbbells Set, Blue, 5 kg
+
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹799/-</b></span>
+                <br> <div class="discount"  >19% off</div>
+               
+        </div>
+
+        <div class="productDiv" >
+            <button data-count=6 class="image" ><img class="productImage" src="fitlife7.PNG"></button>
+            <p class="productDesc" > 
+                B Fit USA Heavy Nylon Gym Handle Pair (NH5), Black
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹719/-</b></span>
+                <br> <div class="discount"  >10% off</div>
+               
+        </div>
+        <div class="productDiv" >
+            <button data-count=7 class="image" ><img class="productImage" src="fitlife7.PNG"></button>
+            <p class="productDesc" > 
+                B Fit USA Heavy Nylon Gym Handle Pair (NH5), Black
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹719/-</b></span>
+                <br> <div class="discount"  >10% off</div>
+               
+        </div>
+        <div class="productDiv" >
+            <button data-count=8 class="image" ><img class="productImage" src="fitlife7.PNG"></button>
+            <p class="productDesc" > 
+                B Fit USA Heavy Nylon Gym Handle Pair (NH5), Black
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹719/-</b></span>
+                <br> <div class="discount"  >10% off</div>
+               
+        </div>
+        <div class="productDiv" >
+            <button data-count=9 class="image" ><img class="productImage" src="fitlife7.PNG"></button>
+            <p class="productDesc" > 
+                B Fit USA Heavy Nylon Gym Handle Pair (NH5), Black
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹719/-</b></span>
+                <br> <div class="discount"  >10% off</div>
+               
+        </div>
+        <div class="productDiv" >
+            <button data-count=10 class="image" ><img class="productImage" src="fitlife7.PNG"></button>
+            <p class="productDesc" > 
+                B Fit USA Heavy Nylon Gym Handle Pair (NH5), Black
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹719/-</b></span>
+                <br> <div class="discount"  >10% off</div>
+               
+        </div>
+        <div class="productDiv" >
+            <button data-count=11 class="image" ><img class="productImage" src="fitlife7.PNG"></button>
+            <p class="productDesc" > 
+                B Fit USA Heavy Nylon Gym Handle Pair (NH5), Black
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹719/-</b></span>
+                <br> <div class="discount"  >10% off</div>
+               
+        </div>
+
+        <div class="productDiv" >
+            <button data-count=12 class="image"><img class="productImage" src="fitlife11.PNG"></button>
+            <p class="productDesc" > 
+                PAX Naturals Hand Sanitizer
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹99/-</b></span>
+                <br> <div class="discount"  >8% off</div>
+               
+        </div>
+
+        <div class="productDiv" >
+            <button data-count=13 class="image"><img class="productImage" src="fitlife12.PNG"></button>
+            <p class="productDesc" > 
+                Asitis Nutrition AS-IT-IS Shaker Bottle, Black, 400 ml
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span class="prize" style="color: white;margin-left: 12px;" ><b>₹220/-</b></span>
+                <br> <div class="discount"  >5% off</div>
+               
+        </div>
+        
+        
+
+
+
+
+        
+</div>
+
+
+<script>
+    var li1="";
+    var li2="";
+    var li3="";
+    var li4="";
+    var li5="";
+
+    $(".image").click(function(){
+    var data_count_value = $(this).attr("data-count");
+    console.log(data_count_value);
+    $(".products").css("display","none");
+  
+    for(var i=1;;i++){
+        if(i==data_count_value){
+            var temp1= $(".productDesc").eq(i-1).text();
+            var temp2= $(".prize").eq(i-1).text();
+            var temp3= $(".discount").eq(i-1).text();
+            var temp4= $(".productImage").eq(i-1).attr("src");
+
+
+            // console.log(temp1);
+            // console.log(temp2);
+            // console.log(temp3);
+            // console.log(temp4);
+
+            $(".product_image").attr("src",temp4);
+            $(".innerProductDesc").text(temp1);
+            $(".innerprize").text(temp2);
+            
+            $(".innerdiscount").text(temp3);
+            $(".innerdiscount").css("color","red");
+            $(".innerdiscount").css("border","2px solid red");
+            $(".innerdiscount").css("display","inline");
+
+
+
+
+
+            if(data_count_value==1){
+                li1="A combination of gym equipments for the perfect workout";
+                li2="Highly durable and long lasting";
+                li3="5kg Each 2 PVC dumbbells";
+            }
+            else if(data_count_value==2){
+                li1="2 Pcs. of Solid Nylon Gym Hanlde";
+                li2="Material: Nylon";
+                li3="Color: Black";
+            }
+            else if(data_count_value==3){
+                li1="NEW ECO FRIENDLY MATERIAL: The upgraded B FIT Yoga mat is made with premium TPE friendly material. It costs more to make, however it's worth it when you compare it to the traditional non-green PVC, NBR and EVA yoga mats. TPE material offers the latest technological improvement over traditional yoga mats";
+                li2="STICKY NON-SLIP TEXTURE: Yoga mat double-sided sticky non-slip texture provides excellent traction and superior grip, best suitable to practice many forms of yoga. Non slip on wood floor, tile floor, cement floor";
+                li3="PERFECT PERFORMANCE: 6mm in thickness offers the most comfortable experience for all level yogis. Most mats are either too thin or too thick. B FIT yoga mats are guaranteed to provide the optimal level of cushion and protection for your joints and knees while still allowing you to grip the floor for balance";
+                // li5="ON Gold Standard Whey Protein Double Rich Chocolate is a premier health supplement that is formulated to boost immunity and provide nourishment";
+                
+            }
+            else if(data_count_value==4){
+                li1="NEW ECO FRIENDLY MATERIAL: The upgraded B FIT Yoga mat is made with premium TPE friendly material. It costs more to make, however it's worth it when you compare it to the traditional non-green PVC, NBR and EVA yoga mats. TPE material offers the latest technological improvement over traditional yoga mats";
+                li2="STICKY NON-SLIP TEXTURE: Yoga mat double-sided sticky non-slip texture provides excellent traction and superior grip, best suitable to practice many forms of yoga. Non slip on wood floor, tile floor, cement floor";
+                li3="PERFECT PERFORMANCE: 6mm in thickness offers the most comfortable experience for all level yogis. Most mats are either too thin or too thick. B FIT yoga mats are guaranteed to provide the optimal level of cushion and protection for your joints and knees while still allowing you to grip the floor for balance";
+                
+                
+            }
+           
+            else if(data_count_value==5){
+                li1="A combination of gym equipments for the perfect workout";
+                li2="Highly durable and long lasting";
+                li3="5kg Each 2 PVC dumbbells";
+           
+            }
+            else if(data_count_value==6){
+                li1="2 Pcs. of Solid Nylon Gym Hanlde";
+                li2="Material: Nylon";
+                li3="Color: Black";
+         
+            }
+            else if(data_count_value==7){
+                li1="2 Pcs. of Solid Nylon Gym Hanlde";
+                li2="Material: Nylon";
+                li3="Color: Black";
+         
+            }
+            else if(data_count_value==8){
+                li1="2 Pcs. of Solid Nylon Gym Hanlde";
+                li2="Material: Nylon";
+                li3="Color: Black";
+         
+            }
+            else if(data_count_value==9){
+                li1="2 Pcs. of Solid Nylon Gym Hanlde";
+                li2="Material: Nylon";
+                li3="Color: Black";
+         
+            }
+            else if(data_count_value==10){
+                li1="2 Pcs. of Solid Nylon Gym Hanlde";
+                li2="Material: Nylon";
+                li3="Color: Black";
+         
+            }
+            else if(data_count_value==11){
+                li1="2 Pcs. of Solid Nylon Gym Hanlde";
+                li2="Material: Nylon";
+                li3="Color: Black";
+         
+            }
+            else if(data_count_value==12){
+                li1="Paxnaturals Instantly Kills 99.9% germs without the use of soap & water";
+                li2="Use all purpose and every where ( like offices, homes, school, travelling)";
+                li3="Gel based Handsanitizer with Advanced Formula with 70% Isopropyl Alcohol";
+                
+            }
+            else if(data_count_value==13){
+                li1="AS-IT-IS Shaker with mixer ball for lump-free drinks and 30g Scoop for worry-free quantity";
+                li2="Add your favorite pre-workout, protein supplement or meal replacement powders.Easy to clean and dishwasher safe design";
+                li3="Made from food-grade, non-toxic and fully recyclable material | BPA Free";
+                
+            }
+
+
+        if(li1 != ""){
+            $("<li>",{
+                id:"li1"
+            }).appendTo(".innerinnerProductDesc");
+            $("#li1").text(li1);
+        }
+
+        if(li2 != ""){
+            $("<li>",{
+                id:"li2"
+            }).appendTo(".innerinnerProductDesc");
+            $("#li2").text(li2);
+        }
+
+        if(li3 != ""){
+            $("<li>",{
+                id:"li3"
+            }).appendTo(".innerinnerProductDesc");
+            $("#li3").text(li3);
+        }
+
+        if(li4 != ""){
+            $("<li>",{
+                id:"li4"
+            }).appendTo(".innerinnerProductDesc");
+            $("#li4").text(li4);
+        }
+
+        if(li5 != ""){
+            $("<li>",{
+                id:"li5"
+            }).appendTo(".innerinnerProductDesc");
+            $("#li5").text(li5);
+        }
+
+            break;
+        }
+    }
+
+   
+
+
+
+    $(".out").css("display","flex");
+    $(".out").css("flex-direction","row");
+})
+
+
+
+
+
+
+
+$(".buy_now").click(function(){
+
+    
+$(".alert_div").css("display","inline");
+$(".alert_div").css("position","absolute");
+$(".alert_background").css("display","block");
+$(".alert_background").css("position","absolute");
+$(".alert_background").css("top","0px");
+
+$("body").css("overflow","hidden");
+var s = $(".innerprize").text();
+s=s.slice(1,s.length-2);
+$("#amount").val(s);
+
+$("#card").css("display","none");
+
+$("#customer_id").css("display","none");
+
+
+}
+);
+
+
+
+
+
+function func(){
+    if (document.querySelector("#r1:checked")!=null){
+    $("#card").css("display","inline");
+    // $("#cvv").css("display","inline");
+    $("#customer_id").css("display","none");
+
+}
+else if (document.querySelector("#r2:checked")!=null){
+    $("#customer_id").css("display","inline");
+    $("#card").css("display","none");
+ 
+}
+else if (document.querySelector("#r3:checked")!=null){
+    $("#customer_id").css("display","none");
+    $("#card").css("display","none");
+
+}
+}
+
+
+
+
+$("#cut_alert").click(
+function(){
+
+$(".alert_div").css("display","none");
+// $(".alert_div").css("position","absolute");
+$(".alert_background").css("display","none");
+// $(".alert_background").css("position","absolute");
+$("body").css("overflow","visible");
+
+
+}
+);
+
+
+
+function sendmail(){
+
+var mail = $("#mail").val();
+var address = $("#address").val();
+var amount = $("#amount").val();
+
+Email.send({
+Host : "smtp.gmail.com",
+Username : "ftlfspprt@gmail.com",
+Password : "Fitlife@123",
+To : mail,
+From : "ftlfspprt@gmail.com",
+Subject : "Your order from Fitlife is Successful",
+Body : "Hi! You have successfully ordered a product from Fitlife Pvt Ltd worth ₹"+amount+" which will be delivered to your address "+address+" within a time span of 4-5 days. Thank you for your kind visit to Fitlife [Your Health our priority!]"
+}).then(
+message => alert("Your order is placed and will be delievered within 4-5 working days. Thank you for Shopping!")
+);
+
+}
+
+
+
+
+
+
+// database usage for current user......................................
+
+// var db = openDatabase("fitlife",1.0,"fitlife",65535);
+var db = openDatabase("fitlife",1.0,"fitlife",65535);
+
+var current_name;
+$(document).ready(function (){
+
+
+// db.transaction(function(transaction){
+//     var query = "create table if not exists data2"+"(currentuser)";
+//     transaction.executeSql(query,undefined,function(){console.log("success");},function(){console.log("failure");});
+// })
+
+
+
+db.transaction(function(transaction){
+var query = "select * from data2";
+transaction.executeSql(query,[],function(transaction,result){
+// if(result.rows.length){
+    // for(var i=0;i<result.rows.length;i++){
+        var row=result.rows.item(result.rows.length-1);
+        // var row=result.rows.item(0);
+
+        // console.log(row.name);
+        var name12=row.currentuser;  //email todo.................
+        // var password1=row.password;
+        current_name=name12;
+            var a = document.getElementById("default_user_icon");
+            if(a!=null){
+            a.remove();
+            }
+            document.getElementById("default_user").innerText=name12[0];
+            document.getElementById("default_user").style.backgroundColor="blue";
+            document.getElementById("default_user").style.color="white";
+            name_track="You Signed in as "+name12;
+            // console.log(name12);
+            
+           
+        // } 
+    // }     
+          
+});
+})
+});
+
+
+
+
+var t=1;
+$(".user").click(function(){
+    if(t==1){
+        t++;
+    $(".user").append("<p class='user_click' >"+name_track+"</p>");
+    }
+});
+
+$(".user").focusout(function(){
+    t=1;
+    $(".user_click").remove();
+}) 
+
+
+// ...............................................................
+
+
+
+
+// database for add to cart
+
+// var db1 = openDatabase("fitlifecart",1.0,"fitlifecart",65535);  // must not use openDatabase 2 times in one script!
+db.transaction(function(transaction){
+var query = "create table if not exists data11"+"(namecart ,"+"image ,"+"desc ,"+"prize ,"+"discount)";
+// make different table name must ,i.e., not data since used in login , therefore i make let say data1
+transaction.executeSql(query,undefined,function(){console.log("success");},function(){console.log("failure");});
+
+
+
+$(".add_to_cart").click(function(){
+var product_image_value = $(".product_image").attr("src");
+var desc_value = $(".innerProductDesc").text();
+var prize_value = $(".prize").text();
+// console.log(product_image_value);
+var discount_value =  $(".inner_discount").text();
+// console.log(discount_value);
+// var password_value = $("#password").val();
+
+db.transaction(function(transaction){
+var query = "insert into data11 (namecart,image,desc,prize,discount) values (?,?,?,?,?)";
+transaction.executeSql(query,[current_name,product_image_value,desc_value,prize_value,discount_value],function(){console.log("success");},function(){console.log("failure")});
+
+alert("Item added to cart successfully!");
+});
+
+
+});
+
+})
+</script>
+</body>
+</html>

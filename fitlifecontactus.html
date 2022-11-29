@@ -1,0 +1,443 @@
+<html>
+    <head>  
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="icon" href="fitlife logo.jpeg" >
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+        
+
+
+        <style>
+ /* #backgroundImage{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: -10;
+} */
+body{
+    background-color: rgb(0, 0, 17);
+}
+
+
+.nav{
+    background-color:rgb(99, 93, 102);
+    position: sticky;
+    top: 0px;
+    z-index: 30;
+}
+.nav-item{
+    margin: 0px 2.2%;
+
+}
+.nav-link{
+    color: rgb(248, 243, 247);
+    transition: all 0.3s;
+}
+.nav-link:hover{
+    color: rgb(44, 43, 43);
+    font-size: 18px;
+}
+
+#nav-div{
+	
+	
+	height: 80px;
+	
+	/*border: 2px solid green;*/
+	/*width: 100%;*/
+	
+	
+}
+#nav-div img{
+	width: 25%;
+	height: 80px;
+	display: inline-block;
+}
+
+#search{
+	border-radius: 50px;
+	
+	outline: none;
+	height: 50px;
+	width: 30%;
+	
+
+	padding: 6px 10px;
+    font-size: 20px;
+}
+.fa-bell{
+	/* margin: 0px 1%; */
+    font-size: 30px;
+}
+
+#Go {
+	/* margin: 0px 1%; */
+	background-color:#6600cc;
+	color: rgb(196, 226, 235) ;
+    width: 7%;
+    height: 40px;
+    font-size: 15px;
+    /* padding: 0px; */
+}
+#Go:hover{
+    background-color:rgb(196, 226, 235) ;
+    color:  #21043f;;
+}
+
+.fa-user{
+    font-size: 30px;
+    color: grey;
+}
+.user{
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    position: relative;
+    /* left: 1.5%; */
+    left: 23%;
+}
+.user:focus{
+    outline: none;
+    top: -5px;
+}
+
+.user_click{
+    position: relative;
+    top: 10px;
+    left: -10px;
+    color: white;
+    border:2px solid rgb(241, 62, 62);
+    width: 0px;
+    z-index: 35;
+}
+
+
+
+h1 {
+    font-family: 'Poppins', sans-serif, 'arial';
+    font-weight: 600;
+    font-size: 72px;
+    color: white;
+    text-align: center;
+    margin-left: 35%;
+
+}
+
+h4 {
+    font-family: 'Roboto', sans-serif, 'arial';
+    font-weight: 400;
+    font-size: 20px;
+    color: #9b9b9b;
+    line-height: 1.5;
+    margin-left: 40%;
+    /* text-align: center; */
+}
+
+.container{
+    /* display: flex;
+    flex-direction: column; */
+    width: 80%;
+}
+
+
+/* ///// inputs /////*/
+
+input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+    font-size: 0.75em;
+    color: #999;
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
+}
+
+.styled-input {
+    float: left;
+    width: 293px;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px){
+    .styled-input {
+        width:100%;
+    }
+}
+
+.styled-input label {
+    color: #999;
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+
+input,
+textarea {
+    padding: 30px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #4d4c4c;
+    color: white;
+    border-radius: 4px;
+}
+
+input:focus,
+textarea:focus { outline: 0; }
+
+input:focus ~ span,
+textarea:focus ~ span {
+    width: 100%;
+    -webkit-transition: all 0.075s ease;
+    transition: all 0.075s ease;
+}
+
+textarea {
+    width: 100%;
+    min-height: 15em;
+}
+
+.styled-input.wide { 
+    width: 250px;
+    max-width: 100%;
+    margin-left: 15px;
+}
+
+
+.input-container {
+    width: 650px;
+    max-width: 100%;
+    margin: 20px auto 25px auto;
+}
+
+.submit-btn {
+    padding: 7px 35px;
+    border-radius: 60px;
+    display: inline-block;
+    background-color: #4b8cfb;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.06),
+              0 2px 10px 0 rgba(0,0,0,0.07);
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(5px);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
+              0 1px 1px 0 rgba(0,0,0,0.09);
+}
+
+@media (max-width: 768px) {
+    .submit-btn {
+        width:100%;
+        float: none;
+        text-align:center;
+    }
+}
+
+input[type=checkbox] + label {
+  color: #ccc;
+  font-style: italic;
+} 
+
+input[type=checkbox]:checked + label {
+  color: #f00;
+  font-style: normal;
+}
+
+
+
+
+        </style>
+    </head>
+    <body>
+
+      <div id="nav-div">
+        <a href="index.html" ><img src="fitlife logo.jpeg"></a>
+
+        <input type="text" name="search" placeholder="Search.." id="search">
+        <!-- <input id="Go" type="button" name="Go" value="Go"> -->
+        <button id="Go" type="button" name="Go" >Go</button>
+        <!-- <button id="login" >Login/Signup</button> -->
+        <button class="user" id="default_user" ><i class="fa fa-user" id="default_user_icon" aria-hidden="true"></i></button>
+
+    </div>
+     
+     
+      <ul class="nav" >
+        <li class="nav-item" >
+            <a href="fitlifeaboutus.html" class="nav-link" >About Us</a>
+        </li>
+        <li class="nav-item" >
+            <a href="index.html" class="nav-link" >Home</a>
+        </li>
+        <li class="nav-item" >
+            <a href="fitlifeshopping.html" class="nav-link" >Shopping</a>
+        </li>
+        <li class="nav-item" >
+            <a href="fitlifefood.html" class="nav-link" >Healthy Food order</a>
+        </li>
+        <li class="nav-item" >
+            <a href="fitlifetips.html" class="nav-link" >Health Tips</a>
+        </li>
+        <li class="nav-item" >
+            <a href="fitlifecontactus.html" class="nav-link" >Contact Us</a>
+        </li>
+        <li class="nav-item" >
+          <a href="fitlifecart.html" class="nav-link" ><i class="fa fa-cart-plus" aria-hidden="true"></i>Cart</a>
+      </li>
+    </ul>
+        <!-- <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v462-n-130-textureidea_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9465282a2b0a375f4f5b120d7bbad882" id="backgroundImage" > -->
+       
+        
+        <div class="container">
+            <div class="row">
+                    <h1>Contact Us</h1>
+            </div>
+            <div class="row">
+                    <h4 style="text-align:center">We'd love to hear from you!</h4>
+            </div>
+
+            <div class="row input-container">
+                    <div class="col-xs-12">
+                        <div class="styled-input wide">
+                            <input type="text" required />
+                            <label>Name</label> 
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-6 col-sm-12">
+                        <div class="styled-input">
+                            <input type="text" required />
+                            <label>Email</label> 
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-sm-12">
+                        <div class="styled-input" style="float:right;">
+                            <input type="text" required />
+                            <label>Phone Number</label> 
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="styled-input wide">
+                            <textarea required></textarea>
+                            <label>Message</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="btn-lrg submit-btn">Send Message</div>
+                    </div>
+            </div>
+        </div>
+
+
+
+
+        <script>
+
+
+
+
+$(".submit-btn").click(function(){
+    alert("Our agent will get in touch with you soon. Thank you for your feedback!")
+})
+
+
+
+
+
+
+
+ 
+// database usage for current user......................................
+
+// var db = openDatabase("fitlife",1.0,"fitlife",65535);
+var db = openDatabase("fitlife",1.0,"fitlife",65535);
+
+
+$(document).ready(function (){
+
+
+// db.transaction(function(transaction){
+//     var query = "create table if not exists data2"+"(currentuser)";
+//     transaction.executeSql(query,undefined,function(){console.log("success");},function(){console.log("failure");});
+// })
+
+
+
+db.transaction(function(transaction){
+    var query = "select * from data2";
+    transaction.executeSql(query,[],function(transaction,result){
+        // if(result.rows.length){
+            // for(var i=0;i<result.rows.length;i++){
+                var row=result.rows.item(result.rows.length-1);
+                // var row=result.rows.item(0);
+
+                // console.log(row.name);
+                var name12=row.currentuser;  //email todo.................
+                // var password1=row.password;
+                
+                    var a = document.getElementById("default_user_icon");
+                    if(a!=null){
+                    a.remove();
+                    }
+                    document.getElementById("default_user").innerText=name12[0];
+                    document.getElementById("default_user").style.backgroundColor="blue";
+                    document.getElementById("default_user").style.color="white";
+                    name_track="You Signed in as "+name12;
+                    // console.log(name12);
+                    
+                   
+                // } 
+            // }     
+                  
+    });
+})
+});
+
+
+var t=1;
+$(".user").click(function(){
+    if(t==1){
+        t++;
+    $(".user").append("<p class='user_click' >"+name_track+"</p>");
+    }
+});
+
+$(".user").focusout(function(){
+    t=1;
+    $(".user_click").remove();
+}) 
+
+
+// ...............................................................
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,322 @@
+body{
+    background-color: rgb(0, 0, 17);
+}
+/* #backgroundImage{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: -10;
+} */
+.nav{
+    background-color:rgb(99, 93, 102);
+    position: sticky;
+    top: 0px;
+    z-index: 30;
+}
+.nav-item{
+    margin: 0px 2.2%;
+
+}
+.nav-link{
+    color: rgb(248, 243, 247);
+    transition: all 0.3s;
+}
+.nav-link:hover{
+    color: rgb(44, 43, 43);
+    font-size: 18px;
+}
+
+#nav-div{
+	
+	
+	height: 80px;
+	
+	/*border: 2px solid green;*/
+	/*width: 100%;*/
+	
+	
+}
+#nav-div img{
+	width: 25%;
+	height: 80px;
+	display: inline-block;
+}
+#search{
+	border-radius: 50px;
+	
+	outline: none;
+	height: 50px;
+	width: 30%;
+	
+
+	padding: 6px 10px;
+    font-size: 20px;
+}
+.fa-bell{
+	/* margin: 0px 1%; */
+    font-size: 30px;
+}
+
+#Go {
+	/* margin: 0px 1%; */
+	background-color:#6600cc;
+	color: rgb(196, 226, 235) ;
+    width: 7%;
+    height: 40px;
+    font-size: 15px;
+}
+#Go:hover{
+    background-color:rgb(196, 226, 235) ;
+    color:  #21043f;;
+}
+#login{
+    /* margin: 0px 1%; */
+    background-color:rgb(196, 226, 235);
+	color: #21043f;
+    width: 22%;
+    height: 40px;
+}
+#login:hover{
+    background-color:#6600cc ;
+    color: rgb(196, 226, 235) ;
+}
+.fa-user{
+    font-size: 30px;
+    color: grey;
+}
+.user{
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    position: relative;
+    left: 1.5%;
+}
+.user:focus{
+    outline: none;
+    top: -5px;
+}
+
+.user_click{
+    position: relative;
+    top: 10px;
+    left: -10px;
+    color: white;
+    border:2px solid rgb(241, 62, 62);
+    width: 0px;
+    z-index: 35;
+}
+
+
+input[type=radio]{
+    margin-left: -70px;
+}
+
+.buy_now{
+   height: 30px;
+   width: 100px;
+   background-color:chartreuse;
+}
+
+.innerProductDesc{
+   color: white;
+}
+.innerinnerProductDesc li{
+   color: white;
+}
+.out{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+    display: none;
+}
+
+
+
+.product_image{
+    height: 400px;
+    width: 100%;
+}
+
+
+
+
+#outerDiv{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    
+    
+
+}
+#combinedDiv{
+    display: flex;
+    width: 100%;
+    height: 400px;
+    transform: translateX(-1292px);
+}
+#outerDiv img{
+    width: 100%;
+}
+
+h1{
+    color: white;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+}
+.productDiv{
+    height: 300px;
+    width: 200px;
+    border: 2px solid grey;
+    margin: 2%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: inline-block;
+}
+.productDiv:hover{
+    box-shadow: 5px 5px 10px 10px darkgray;
+}
+.productImage{
+    height: 150px;
+    width: 100%;
+}
+.productDesc{
+    color: white;
+}
+.fa-star{
+    color: yellow;
+}
+.discount{
+    display: inline;
+    border: 2px solid red;
+    color: red;
+    margin-left: 10px;
+}
+.add_to_cart{
+    margin-left: 35px;
+    background-color: cornflowerblue;
+}
+
+
+
+.alert_background{
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(66, 66, 66);
+    opacity: 0.8;
+    z-index: 38;
+
+
+}
+
+
+.alert_div{
+    display: none;
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    top: 10%;
+    z-index: 40;
+    border-radius: 30px;
+    background-color: rgb(186, 122, 247);
+    border: 2px solid gray;
+    font-size: 30px;
+   
+    
+}
+.alert_div1{
+    display: none;
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    top: 10%;
+    z-index: 40;
+    border-radius: 30px;
+    background-color: rgb(186, 122, 247);
+    border: 2px solid gray;
+    font-size: 30px;
+   
+    
+}
+
+#signup_form{
+    text-align: center;
+}
+#login_form{
+    text-align: center;
+}
+
+
+#signup_form table{
+   margin-left: 15%;
+   width: 100%;
+
+}
+#signup_form table input{
+    width: 50%;
+ }
+ #login_form table{
+    margin-left: 15%;
+    width: 100%;
+ }
+ #login_form table input{
+     width: 50%;
+  }
+  #login_form table label{
+    font-size: 20px;
+ }
+ #signup_form table label{
+    font-size: 20px;
+ }
+ #signup_form table button{
+    font-size: 20px;
+    width: 150px;
+    height: 40px;
+   
+ 
+ }
+ #login_form table button{
+    font-size: 20px;
+    width: 150px;
+    height: 40px;
+ }
+
+#cut_alert{
+    height: 50px;
+    width: 50px;
+    border-radius: 30px 0px;
+}
+#cut_alert1{
+    height: 50px;
+    width: 50px;
+    border-radius: 30px 0px;
+}
+
+
+.footer{
+    background-color: black;
+    text-align: center;
+    margin-bottom: -20px;
+}
+.footer img{
+    height: 200px;
+    width: 40%;
+    text-align: center;
+    margin-top: 10px;
+}
+.footer p{
+    color: white;
+}
+.footer h3{
+    color: chocolate;
+}

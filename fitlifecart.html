@@ -1,0 +1,877 @@
+<html>
+    <head>
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
+                <link rel="stylesheet" type="text/css" href="fitlife.css">
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="icon" href="fitlife logo.jpeg" >
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+        <style>
+            /* #backgroundImage{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: -10;
+} */
+body{
+    background-color: rgb(0, 0, 17);
+}
+.nav{
+    background-color:rgb(99, 93, 102);
+    position: sticky;
+    top: 0px;
+    z-index: 30;
+}
+.nav-item{
+    margin: 0px 2.2%;
+
+}
+.nav-link{
+    color: rgb(248, 243, 247);
+    transition: all 0.3s;
+}
+.nav-link:hover{
+    color: rgb(44, 43, 43);
+    font-size: 18px;
+}
+
+#nav-div{
+	
+	
+	height: 80px;
+	
+	/*border: 2px solid green;*/
+	/*width: 100%;*/
+	
+	
+}
+#nav-div img{
+	width: 25%;
+	height: 80px;
+	display: inline-block;
+}
+#search{
+	border-radius: 50px;
+	
+	outline: none;
+	height: 50px;
+	width: 30%;
+	
+
+	padding: 6px 10px;
+    font-size: 20px;
+}
+.fa-bell{
+	/* margin: 0px 1%; */
+    font-size: 30px;
+}
+
+
+input[type=radio]{
+                margin-left: -70px;
+            }
+
+.buy_now{
+               height: 30px;
+               width: 100px;
+               background-color:chartreuse;
+           }
+
+.innerProductDesc{
+               color: white;
+           }
+           .innerinnerProductDesc li{
+               color: white;
+           }
+           .out{
+                /* display: flex;
+                flex-direction: row;
+                justify-content: space-between; */
+                display: none;
+            }
+            
+            
+            
+            .product_image{
+                height: 400px;
+                width: 100%;
+            }
+
+
+#Go {
+	/* margin: 0px 1%; */
+	background-color:#6600cc;
+	color: rgb(196, 226, 235) ;
+    width: 7%;
+    height: 40px;
+    font-size: 15px;
+}
+#Go:hover{
+    background-color:rgb(196, 226, 235) ;
+    color:  #21043f;;
+}
+
+.fa-user{
+    font-size: 30px;
+    color: grey;
+}
+.user{
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    position: relative;
+    /* left: 1.5%; */
+    left: 23%;
+}
+.user:focus{
+    outline: none;
+    top: -5px;
+}
+
+.user_click{
+    position: relative;
+    top: 10px;
+    left: -10px;
+    color: white;
+    border:2px solid rgb(241, 62, 62);
+    width: 0px;
+    z-index: 35;
+}
+#login{
+    /* margin: 0px 1%; */
+    background-color:rgb(196, 226, 235);
+	color: #21043f;
+    width: 22%;
+    height: 40px;
+}
+#login:hover{
+    background-color:#6600cc ;
+    color: rgb(196, 226, 235) ;
+}
+        </style>
+    </head>
+    <body>
+
+        <!-- <img src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v462-n-130-textureidea_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9465282a2b0a375f4f5b120d7bbad882" id="backgroundImage" > -->
+
+        <div id="nav-div">
+            <a href="index.html" ><img src="fitlife logo.jpeg"></a>
+    
+            <input type="text" name="search" placeholder="Search.." id="search">
+            <input id="Go" type="button" name="Go" value="Go">
+            <!-- <button id="login" >Login/Signup</button> -->
+            <button class="user" id="default_user" ><i class="fa fa-user" id="default_user_icon" aria-hidden="true"></i></button>
+
+        </div>
+
+        <ul class="nav" >
+            <li class="nav-item" >
+                <a href="fitlifeaboutus.html" class="nav-link" >About Us</a>
+            </li>
+            <li class="nav-item" >
+                <a href="index.html" class="nav-link" >Home</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifeshopping.html" class="nav-link" >Shopping</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifefood.html" class="nav-link" >Healthy Food order</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifetips.html" class="nav-link" >Health Tips</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifecontactus.html" class="nav-link" >Contact Us</a>
+            </li>
+            <li class="nav-item" >
+                <a href="fitlifecart.html" class="nav-link" ><i class="fa fa-cart-plus" aria-hidden="true"></i>Cart</a>
+            </li>
+        </ul>
+
+
+
+        <div class="alert_background">
+            
+        </div>
+
+        <div class="alert_div" >
+            <button id="cut_alert" > <i class="fa fa-times" aria-hidden="true"></i></button>
+             <!-- id of both sign up form and buy now for is same , so that there is no need of applying CSS to both seperately -->
+            <form id="signup_form" action="javascript:sendmail()">
+             <h3>Delivery & Payment</h3>
+             <table>
+                <tr><td><label>Delivery Address</label></td>
+                 <td> <textarea id="address" required ></textarea></td></tr>
+                 <tr><td><label>Email </label></td>
+                     <td> <input type="email" id="mail" required ></td></tr>
+                 <tr > <td><label>Select Payment method</label></td>
+                     <td ><input type="radio" name="r1" onclick=func() id="r1">Debit/Credit Card
+                     <br><input type="radio" name="r1" onclick=func() id="r2">Net banking
+                     <br><input type="radio" name="r1" id="r3" onclick=func()>Pay on Delivery
+                     </td></tr> 
+                     
+                     <tr><td><label>Amount</label></td>
+                         <td> <input type="number" id="amount" disabled></td></tr>       
+                         
+                         
+                       <table id="card">
+                         <tr ><td><label>Card Number</label></td>
+                     <td> <input type="text" ></td></tr> 
+                    <tr ><td><label>CVV</label></td>
+                         <td> <input type="password" ></td></tr> 
+                        </table>
+
+                        <table id="customer_id">
+                            <tr ><td><label>Bank customer id</label></td>
+                                <td> <input type="text" ></td></tr> 
+                            </table>
+                        <table>
+                 <tr><td colspan="2" ><input class="make_payment" type="submit" value = "Make Payment & Place Order"></td></tr> 
+                 <tr><td colspan="2">Please check your Mail box after making payment for justification!</td>
+                 </table>
+                </table>
+             </form>
+           
+             
+         </div>
+
+        <div class="out" >
+            <div>
+            <img class="product_image" src="fitlifeproduct1.PNG">
+        </div>
+        <div style="margin:50px ;" >
+            <p class="innerProductDesc" > 
+                Fitlife Gold Standard 100% Whey Protien
+                </p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <br><span style="color: white;" class="innerprize"><b>₹999/-</b></span> <br>
+                <div class="innerdiscount" style="margin-left: -2px;" ><span class="inner_discount"  >28% off</span> </div><br><br>
+                <button onclick=removecart() style="background-color: crimson ;margin-left: -2px;" ><i class="fa fa-cart-plus" aria-hidden="true"></i> &nbsp;REMOVE</button>
+                
+                <button class="buy_now" >Buy now</button>
+        
+                   <ul class="innerinnerProductDesc">
+                  </ul>
+    
+    </p>        
+    </div>
+          </div>
+
+
+
+        <div class="parent_div" >
+
+            <h3 id="emptycart" style="color: white;margin:10px;">Nothing to show in your cart!</h3>
+
+        </div>
+
+
+        <script>
+            
+
+// database usage for current user......................................
+
+
+var db = openDatabase("fitlife",1.0,"fitlife",65535);
+var current_name;
+
+var name_track="Not Signed in";
+// $(document).ready(function (){
+
+
+// // db.transaction(function(transaction){
+// //     var query = "create table if not exists data2"+"(currentuser)";
+// //     transaction.executeSql(query,undefined,function(){console.log("success");},function(){console.log("failure");});
+// // })
+
+
+db.transaction(function(transaction){
+        var query = "select * from data2";
+        transaction.executeSql(query,[],function(transaction,result){
+            // if(result.rows.length){
+                // for(var i=0;i<result.rows.length;i++){
+                    var row=result.rows.item(result.rows.length-1);
+                    // var row=result.rows.item(0);
+
+                    // console.log(row.name);
+                    var name13=row.currentuser;  //email todo.................
+                    // var password1=row.password;
+                    
+                        
+                        // console.log(current_name);
+                        current_name=name13;
+                    //    console.log(window.current_name);
+                       console.log(current_name);
+
+                       var a = document.getElementById("default_user_icon");
+                    if(a!=null){
+                    a.remove();
+                    }
+                    document.getElementById("default_user").innerText=name13[0];
+                    document.getElementById("default_user").style.backgroundColor="blue";
+                    document.getElementById("default_user").style.color="white";
+                    name_track="You Signed in as "+name13;
+
+
+                    // } 
+                // }     
+                      
+        });
+    });
+
+
+
+
+
+
+    var t=1;
+$(".user").click(function(){
+    if(t==1){
+        t++;
+    $(".user").append("<p class='user_click' >"+name_track+"</p>");
+    }
+});
+
+$(".user").focusout(function(){
+    t=1;
+    $(".user_click").remove();
+}) 
+
+
+
+// ...............................................................
+
+
+// database connection for cart
+
+// var db1 = openDatabase("fitlifecart",1.0,"fitlifecart",65535);
+// document.getElementsByClassName("div").remove();
+// $(".div").css("display","none");
+console.log(current_name); // showing undefined here but after next line db.trans.. it showing currect name? 
+var count=1;
+var flag=true;
+
+
+db.transaction(function(transaction){
+        var query = "select * from data11 order by prize";
+
+       
+        transaction.executeSql(query,[],function(transaction,result){
+            // if(result.rows.length){
+                // var count=1;
+                for(let i=result.rows.length-1;i>=0;i--){
+                    
+                    let row=result.rows.item(i);
+                    // console.log(row.name);
+                    let image1=row.image;  
+                    // let page = image1.slice(0,image1.length-4);
+                    // console.log(page);
+                    let desc1=row.desc;  //email todo.................
+                    let prize1=row.prize;
+                    let discount1=row.discount;
+                    let name_value=row.namecart;
+
+
+                    // console.log(image1);
+                    // console.log(desc1);
+                    // console.log(prize1);  
+                    // console.log(discount1);  
+                    // console.log(name_value);  
+                    
+                    if(name_value==current_name){
+                     flag=false;
+                        // count++;
+                        console.log("j");
+
+                    $("<div>",{
+                        class:"div",
+                       
+                    }).appendTo(".parent_div");
+
+                    
+                    $(".div").css({
+                        border:"2px solid grey",
+                        overflow:"hidden",
+                        
+                        // backgroundColor:"red",
+                        height:"150px",
+                        width:"30%",
+                        margin:"20px"
+                        // display:"flex",
+                        // flexDirection:"row",
+                        // paddingLeft:"100px"
+                    })
+
+                    
+                    $("<button>",{
+                        // href:page+".html",
+                        class:"image",
+                        width:"100%",
+                        dataCount:count,
+                        // height:"150px",
+                        // width:"20%"
+                    }).appendTo(".div");
+
+                    count++;
+                
+                    $("<img>",{
+                        src:image1,
+                        height:"150px",
+                        width:"100%",
+                        class:"productImage"
+                    }).appendTo(".image");
+
+                    console.log($(".productImage").attr("src"));
+
+                    $("<p>",{
+                        // text:desc1+" "+prize1+" "+discount1
+                        // height:"100px",
+                        // width:"100%"
+                        class:"productDesc",
+                        id:"productDesc"+(count-1)
+                    }).appendTo(".div");
+                    $(".productDesc").text(desc1);
+
+                    // console.log($("#productDesc"+(5)).text());
+                    // console.log(count-1);
+
+                    $("<p>",{
+                        // text:desc1+" "+prize1+" "+discount1
+                        // height:"100px",
+                        // width:"100%"
+                        class:"prize"
+                    }).appendTo(".div");
+                    $(".prize").text(prize1);
+
+                    $("<p>",{
+                        // text:desc1+" "+prize1+" "+discount1
+                        // height:"100px",
+                        // width:"100%"
+                        class:"discount"
+                    }).appendTo(".div");
+                    $(".discount").text(discount1);
+
+
+                    if(flag){
+                        $("#emptycart").css("display","block");
+                    }
+                    else{
+                        $("#emptycart").css("display","none");
+                    }
+
+
+
+
+////////////////////////////////////////////////////////////
+
+
+
+
+    var li1="";
+    var li2="";
+    var li3="";
+    var li4="";
+    var li5="";
+
+    var v=1;
+    var w=1;
+    var x=1;
+    var y=1;
+    var z=1;
+
+    $(".image").click(function(){
+
+    var data_count_value = $(this).attr("dataCount");
+    // console.log(data_count_value);
+    $(".products").css("display","none");
+  
+
+   
+
+
+    for(var i=1;;i++){
+        if(i==data_count_value){
+            // var temp1= $(".productDesc").eq(data_count_value-1).text();
+            // var temp1= $("#productDesc"+(i)).text();
+            // console.log("#productDesc"+(i))
+            // var temp2= $(".prize").text();
+            // var temp3= $(".discount").text();
+            
+            var temp4= $(".productImage").eq(i-1).attr("src");
+            $(".div").css("display","none");
+
+
+
+            // console.log(temp1);
+            // console.log(temp2);
+            // console.log(temp3);
+            console.log(temp4);
+
+            // $(".product_image").attr("src",temp4);
+            // $(".innerProductDesc").text(temp1);
+            // $(".innerprize").text(temp2);
+            
+            // $(".innerdiscount").text(temp3);
+            $(".product_image").attr("src",temp4);
+
+            $(".innerdiscount").css("color","red");
+            $(".innerdiscount").css("border","2px solid red");
+            $(".innerdiscount").css("display","inline");
+
+
+
+
+
+            if(temp4=="fitlifeproduct1.PNG"){
+
+                $(".innerProductDesc").text("Fitlife Gold Standard 100% Whey Protien");
+                $(".innerprize").text("₹999/-");
+                $(".innerdiscount").text("28% off");
+                li1="Optimum Nutrition Gold Standard 100% Whey Protein 2 lb Double Rich Chocolate aids in the development of lean muscle";
+                li2="It supports maintenance and improvement of the metabolism of your body";
+                li3="It aids rapid muscle recovery after rigorous workout sessions";
+                li4="Gold Standard 100% Whey Protein aids in the enhancement of your stamina and energy";
+                li5="ON Gold Standard Whey Protein Double Rich Chocolate is a premier health supplement that is formulated to boost immunity and provide nourishment";
+
+            }
+            else if(temp4=="fitlife4.PNG"){
+                $(".innerProductDesc").text(" Fitlife Peanut Butter(Unsweetened)-1Kg");
+                $(".innerprize").text("₹499/-");
+                $(".innerdiscount").text("19% off");
+                
+                li1="Now a natural peanut butter with the goodness of both peanuts (80%) and whey protein(20%)";
+                li2="With 37% of protein, this Protein Peanut Butter is a perfect grab for those looking to manage their healthy fats as well as protein intake";
+                li3="Each serving helps you become healthier as it provides your body with rich dietary fiber for improved digestion and satiation to avoid unhealthy munching";
+                li4="With a creamy texture and crunchy peanut chunks, this protein peanut butter is free from any hydrogenated oils and preservatives";
+                li5="MuscleBlaze® Protein Peanut Butter does not contain any added sugar, salt and GMOs";
+                
+            }
+            else if(temp4=="fitlife5.PNG"){
+                $(".innerProductDesc").text("   Fitlife FITNESS PVC Dumbbells Set, Blue, 5 kg");
+                $(".innerprize").text("₹799/-");
+                $(".innerdiscount").text("19% off");
+                
+                li1="A combination of gym equipments for the perfect workout";
+                li2="Highly durable and long lasting";
+                li3="5kg Each 2 PVC dumbbells";
+                // li4="With a creamy texture and crunchy peanut chunks, this protein peanut butter is free from any hydrogenated oils and preservatives";
+                // li5="MuscleBlaze® Protein Peanut Butter does not contain any added sugar, salt and GMOs";
+                
+            }
+
+            else if(temp4=="fitlife6.PNG"){
+                $(".innerProductDesc").text(" Himalaya Healthcare Solutions (combo)");
+                $(".innerprize").text("₹299/-");
+                $(".innerdiscount").text("15% off");
+                
+                li1="Gastric cleanser";
+                li2="Improves nutrient assimilation";
+                li3="Support digestive and respiratory system";
+                li4="Promotes healthy lung function";
+                li5="Normalise breathing";
+                // console.log("in");
+            }
+          
+            else if(temp4=="fitlife7.PNG"){
+                $(".innerProductDesc").text("B Fit USA Heavy Nylon Gym Handle Pair (NH5), Black");
+                $(".innerprize").text("₹799/-");
+                $(".innerdiscount").text("10% off");
+                
+                li1="2 Pcs. of Solid Nylon Gym Hanlde";
+                li2="Material: Nylon";
+                li3="Color: Black";
+                // li4="Promotes healthy lung function";
+                // li5="Normalise breathing";
+                
+            }
+
+            else if(temp4=="fitlife8.PNG"){
+                $(".innerProductDesc").text(" B Fit USA TPE Yoga Mat, Purple");
+                $(".innerprize").text("₹1250/-");
+                $(".innerdiscount").text("21% off");
+                
+                li1="NEW ECO FRIENDLY MATERIAL: The upgraded B FIT Yoga mat is made with premium TPE friendly material. It costs more to make, however it's worth it when you compare it to the traditional non-green PVC, NBR and EVA yoga mats. TPE material offers the latest technological improvement over traditional yoga mats";
+                li2="STICKY NON-SLIP TEXTURE: Yoga mat double-sided sticky non-slip texture provides excellent traction and superior grip, best suitable to practice many forms of yoga. Non slip on wood floor, tile floor, cement floor";
+                li3="PERFECT PERFORMANCE: 6mm in thickness offers the most comfortable experience for all level yogis. Most mats are either too thin or too thick. B FIT yoga mats are guaranteed to provide the optimal level of cushion and protection for your joints and knees while still allowing you to grip the floor for balance";
+                // li4="Promotes healthy lung function";
+                // li5="Normalise breathing";
+                
+            }
+           
+            else if(temp4=="fitlife9.PNG"){
+                $(".innerProductDesc").text(" Fitlife Salmon Omega-3, 60 softgels");
+                $(".innerprize").text("₹1299/-");
+                $(".innerdiscount").text("9% off");
+                
+                 li1="Amway Nutrilite Salmon Omega 3 has Unique blend of Omega 3 Fatty Acids";
+                li2="Amway Nutrilite Salmon Omega 3 helps to fulfill the bodys requirement of fatty acids";
+                li3="There are no added flavors, colors or preservatives in this Omega-3 supplement. All the oils and nutrients are derived from 100% natural sources, making it suitable for just about anyone.";
+                li4="Preventing several diseases like eczema and lupus";
+                li5="Amway Nutrilite Salmon Omega 3 helps in maintaining better heart health by allowing artery walls to contract and relax easily.";
+                
+            }
+           
+            else if(temp4=="fitlife10.PNG"){
+                $(".innerProductDesc").text("    Fitlife Calcium Tablets, 60 tablet(s), Unflavoured");
+                $(".innerprize").text("₹699/-");
+                $(".innerdiscount").text("25% off");
+                
+                li1="Herbalife Calcium Tablet is a calcium supplement fortified with magnesium and vitamin D in it";
+                li2="It is a health supplement that helps to support and maintain strong muscles";
+                li3="Herbalife Calcium Tablets may ensure optimal absorption of calcium for healthy bones and lowers the risk of fractures";
+                li4="Herbalife Calcium Tablet may improve your joint mobility and health";
+                // li5="ON Gold Standard Whey Protein Double Rich Chocolate is a premier health supplement that is formulated to boost immunity and provide nourishment";
+                
+            }
+
+            else if(temp4=="fitlife11.PNG"){
+                $(".innerProductDesc").text(" PAX Naturals Hand Sanitizer");
+                $(".innerprize").text("₹99/-");
+                $(".innerdiscount").text("8% off");
+                
+                li1="Paxnaturals Instantly Kills 99.9% germs without the use of soap & water";
+                li2="Use all purpose and every where ( like offices, homes, school, travelling)";
+                li3="Gel based Handsanitizer with Advanced Formula with 70% Isopropyl Alcohol";
+                // li4="Promotes healthy lung function";
+                // li5="Normalise breathing";
+                
+            }
+            else if(temp4=="fitlife12.PNG"){
+                $(".innerProductDesc").text(" Asitis Nutrition AS-IT-IS Shaker Bottle, Black, 400 ml");
+                $(".innerprize").text("₹220/-");
+                $(".innerdiscount").text("5% off");
+                
+                li1="AS-IT-IS Shaker with mixer ball for lump-free drinks and 30g Scoop for worry-free quantity";
+                li2="Add your favorite pre-workout, protein supplement or meal replacement powders.Easy to clean and dishwasher safe design";
+                li3="Made from food-grade, non-toxic and fully recyclable material | BPA Free";
+                // li4="Promotes healthy lung function";
+                // li5="Normalise breathing";
+                
+            }
+
+
+        if(li1 != ""){
+            if(v==1){
+                v++;
+            $("<li>",{
+                id:"li1"
+            }).appendTo(".innerinnerProductDesc");
+            $("#li1").text(li1);
+        }
+        }
+
+        if(li2 != ""){
+            if(w==1){
+                w++;
+            $("<li>",{
+                id:"li2"
+            }).appendTo(".innerinnerProductDesc");
+            $("#li2").text(li2);
+        }
+    }
+
+        if(li3 != ""){
+            if(x==1){
+                x++;
+            $("<li>",{
+                id:"li3"
+            }).appendTo(".innerinnerProductDesc");
+            $("#li3").text(li3);
+        }
+    }
+
+        if(li4 != ""){
+            if(y==1){
+                y++;
+            $("<li>",{
+                id:"li4"
+            }).appendTo(".innerinnerProductDesc");
+            $("#li4").text(li4);
+        }
+    }
+
+        if(li5 != ""){
+            if(z==1){
+                z++;
+            $("<li>",{
+                id:"li5"
+            }).appendTo(".innerinnerProductDesc");
+            $("#li5").text(li5);
+        }
+    }
+
+
+            break;
+        }
+
+      
+
+
+    }
+
+   
+
+
+
+    $(".out").css("display","flex");
+    $(".out").css("flex-direction","row");
+})
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////                 
+                    // $(".para").css("color","white");
+                }
+                }
+        });
+    })
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+$(".buy_now").click(function(){
+
+    
+$(".alert_div").css("display","inline");
+$(".alert_div").css("position","absolute");
+$(".alert_background").css("display","block");
+$(".alert_background").css("position","absolute");
+$(".alert_background").css("top","0px");
+
+$("body").css("overflow","hidden");
+var s = $(".innerprize").text();
+s=s.slice(1,s.length-2);
+$("#amount").val(s);
+
+$("#card").css("display","none");
+
+$("#customer_id").css("display","none");
+
+
+}
+);
+
+
+
+
+
+function func(){
+    if (document.querySelector("#r1:checked")!=null){
+    $("#card").css("display","inline");
+    // $("#cvv").css("display","inline");
+    $("#customer_id").css("display","none");
+
+}
+else if (document.querySelector("#r2:checked")!=null){
+    $("#customer_id").css("display","inline");
+    $("#card").css("display","none");
+ 
+}
+else if (document.querySelector("#r3:checked")!=null){
+    $("#customer_id").css("display","none");
+    $("#card").css("display","none");
+
+}
+}
+
+
+
+
+
+$("#cut_alert").click(
+function(){
+
+$(".alert_div").css("display","none");
+// $(".alert_div").css("position","absolute");
+$(".alert_background").css("display","none");
+// $(".alert_background").css("position","absolute");
+$("body").css("overflow","visible");
+
+
+}
+);
+
+
+
+function sendmail(){
+
+var mail = $("#mail").val();
+var address = $("#address").val();
+var amount = $("#amount").val();
+
+Email.send({
+Host : "smtp.gmail.com",
+Username : "ftlfspprt@gmail.com",
+Password : "Fitlife@123",
+To : mail,
+From : "ftlfspprt@gmail.com",
+Subject : "Your order from Fitlife is Successful",
+Body : "Hi! You have successfully ordered a product from Fitlife Pvt Ltd worth ₹"+amount+" which will be delivered to your address "+address+" within a time span of 4-5 days. Thank you for your kind visit to Fitlife [Your Health our priority!]"
+}).then(
+message => alert("Your order is placed and will be delievered within 4-5 working days. Thank you for Shopping!")
+);
+
+}
+
+
+
+
+////////////////////////////////////////////////////////// remove cart
+
+
+function removecart(){
+
+
+
+
+var db1 = openDatabase("fitlifecart",1.0,"fitlifecart",65535);  // must not use openDatabase 2 times in one script!
+
+
+
+var product_image_value = $(".product_image").attr("src");
+
+
+// var password_value = $("#password").val();
+
+db.transaction(function(transaction){
+var query = "delete from data11 where image =?"; // must use ? and give value in next statement
+transaction.executeSql(query,[product_image_value],function(){console.log("success");},function(){console.log("failure")});
+window.location.reload();
+});
+
+
+
+
+
+
+
+}
+
+
+
+
+
+        </script>
+    </body>
+</html>
